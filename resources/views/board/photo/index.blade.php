@@ -39,12 +39,13 @@
                             </div>
                             <div class="gall-text">
                                 <div class="gall-tit-wrap">
-                                    {{ $row->subject }}
-
-                                    {!! $row->isNew() !!}
+                                    <span class="gall-tit ellipsis2">
+                                        {{ $row->subject }}
+                                        {!! $row->isNew() !!}
+                                    </span>
                                 </div>
                                 <div class="gall-con">
-                                    <span class="gall-date">{{ $row->created_at->format('Y-m-d') }}</span>
+                                    <span class="gall-date">{{ $row->event_sDate->format('Y-m-d') }}</span>
                                     <span class="gall-name">{{ $row->name ?? '' }}</span>
                                     <span class="gall-hit">{{ number_format($row->ref) }} Hit</span>
                                 </div>
@@ -115,7 +116,7 @@
                     sid: getPK(this),
                 }
 
-                if (confirm('정말로 삭제 하시겠습니까?')) {
+                if (confirm('삭제 하시겠습니까?')) {
                     callAjax(dataUrl, ajaxData);
                 }
             });

@@ -38,7 +38,7 @@
                             <br><br>
                             <strong>■ 정회원</strong><br><br>
                             <ul class="list-type list-type-decimal">
-                                <li>가입헤택
+                                <li>가입혜택
                                     <ul class="list-type list-type-bar">
                                         <li>학회에 가입하실 경우 월간 「대한환경공학회지」, 격월로 발행하는 영문학회지「Environmental Engineering Research」 총 18권의 학회지 구독</li>
                                         <li>국문지 논문투고 가능</li>

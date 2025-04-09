@@ -96,10 +96,6 @@
 .bbs-tit > a{
     vertical-align: middle;
 }
-.ic-new,
-.ic-cnt{
-    margin: 3px 0;
-}
 .ic-new{
     display: inline-flex;
     justify-content: center;
@@ -678,13 +674,9 @@
         margin-bottom: 10px;
         font-size: 14px;
     }
-    .ic-new,
-    .ic-cnt{
-        margin: 0;
-    }
     .ic-new {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         font-size: 10px;
     }
     .ic-cnt{
@@ -693,7 +685,7 @@
         font-size: 12px;
     }
     .bbs-tit:has(.ic-new) > a{
-        max-width: calc(100% - 25px);
+        max-width: calc(100% - 24px);
     }
     .bbs-tit:has(.ic-cnt) > a{
         max-width: calc(100% - 40px);

@@ -17,7 +17,7 @@ class FeeController extends Controller
         view()->share([
             'userConfig' => getConfig('user'),
             'feeConfig' => getConfig('fee'),
-            'main_key' => 'M2',
+            'main_key' => 'M1',
         ]);
     }
 

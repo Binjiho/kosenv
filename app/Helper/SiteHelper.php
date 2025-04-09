@@ -126,68 +126,47 @@ if (!function_exists('priceKo')) {
     {
         $price = unComma($price);
 
-        // 값이 0보다 작거나 10억 보다 클때
-        if ($price <= 0 || $price >= 100000000) {
+        // 값이 0이거나 10억 이상일 때
+        if ($price <= 0 || $price >= 1000000000) {
             return $price;
         }
 
+        // 숫자에 해당하는 한글 표기
+        $numKo = ['', '일', '이', '삼', '사', '오', '육', '칠', '팔', '구'];
+        // 단위 표기 (1의 자리, 10의 자리, 100의 자리, 1000의 자리)
+        $unitKo = ['', '십', '백', '천'];
+        // 만 단위 표기 (없음, 만, 억)
+        $manKo = ['', '만', '억'];
+
         $result = '';
-        $unitArray  = ['', '십', '백', '천', '만', '십만', '백만', '천만', '억'];
+        $strPrice = (string)$price;
+        $len = strlen($strPrice);
 
-        // 각 자리수 계산
-        $unitIndex = 0;
+        // 각 자리 숫자를 처리
+        for ($i = 0; $i < $len; $i++) {
+            $digit = (int)$strPrice[$i];
+            $digitPos = $len - $i - 1; // 자릿수 위치 (0부터 시작)
 
-        while ($price > 0 && $unitIndex < count($unitArray)) {
-            $mod = (int)$price % 10; // 1의 자리 수를 가져옴
+            // 현재 숫자가 0이 아닐 때만 처리
+            if ($digit > 0) {
+                // 만, 억 단위 처리
+                $manUnit = floor($digitPos / 4);
+                // 천, 백, 십, 일 단위 처리
+                $unitPos = $digitPos % 4;
 
-            if ($mod > 0) {
-                switch ($mod) {
-                    case 1:
-                        $mod = '일';
-                        break;
-
-                    case 2:
-                        $mod = '이';
-                        break;
-
-                    case 3:
-                        $mod = '삼';
-                        break;
-
-                    case 4:
-                        $mod = '사';
-                        break;
-
-                    case 5:
-                        $mod = '오';
-                        break;
-
-                    case 6:
-                        $mod = '육';
-                        break;
-
-                    case 7:
-                        $mod = '칠';
-                        break;
-
-                    case 8:
-                        $mod = '팔';
-                        break;
-
-                    case 9:
-                        $mod = '구';
-                        break;
-
-                    case 10:
-                        $mod = '십';
-                        break;
+                // 숫자 + 단위 추가
+                // 1인 경우, 1의 자리가 아니라면 '일'을 생략 (예: 일십 -> 십)
+                if ($digit == 1 && $unitPos > 0) {
+                    $result .= $unitKo[$unitPos];
+                } else {
+                    $result .= $numKo[$digit] . $unitKo[$unitPos];
                 }
 
-                $result = $mod . $unitArray[$unitIndex] . $result;
+                // 만, 억 단위 추가 (해당 단위의 마지막 숫자일 때)
+                if ($unitPos == 0 && $manUnit > 0) {
+                    $result .= $manKo[$manUnit];
+                }
             }
-
-            $price = intval($price / 10); // 자릿수 낮춤
-            $unitIndex++;
         }
 
         return $result;

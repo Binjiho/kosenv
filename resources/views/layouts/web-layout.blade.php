@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko" class="root-text-sm">
 <head>
     @include('layouts.components.baseHead')

@@ -42,12 +42,18 @@ class BoardServices extends AppServices
         $keyword = $request->keyword;
         $boardConfig = getConfig("board")[$code];
 
-        if ($code == 'workshop-schedule') {
+        if ($code == 'event-schedule') {
             // 학술대회 일정
-            return $this->workshopSchedule($request);
+            return $this->eventSchedule($request);
         }
 
-        $query = Board::where('code', $code)->withCount('files')->orderByDesc('sid');
+        $query = Board::where('code', $code)->withCount('files');
+
+        if ($code == 'photo') {
+            $query->orderByDesc('event_sDate'); // 학술대회 일정
+        }else{
+            $query->orderByDesc('sid');
+        }
 
         if (!isAdmin()) {
             $query->where('hide', 'N');
@@ -82,14 +88,16 @@ class BoardServices extends AppServices
         return $this->data;
     }
 
-    public function workshopSchedule(Request $request)
+    public function eventSchedule(Request $request)
     {
         $code = $request->code;
         $year = $request->year ?? now()->format('Y');
         $month = $request->month ?? '';
         $gubun = $request->gubun ?? '';
-        $minYear = now()->subYear(2)->format('Y');
-        $maxYear = now()->addYear(2)->format('Y');
+//        $minYear = now()->subYear(2)->format('Y');
+//        $maxYear = now()->addYear(2)->format('Y');
+        $minYear = ($year - 2);
+        $maxYear = ($year + 2);
 
         $boardConfig = getConfig("board")[$code];
 
@@ -192,7 +200,6 @@ class BoardServices extends AppServices
     private function boardUpdate(Request $request)
     {
         $this->transaction();
-
         try {
             $board = Board::findOrFail($request->sid);
             $board->setByData($request);

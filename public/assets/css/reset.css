@@ -42,7 +42,7 @@ sub{vertical-align:sub; font-size:0.5em; }
 
 .font-suit,
 .font-suit *{
-    font-family:'SUIT'; 
+    font-family:'SUIT', sans-serif;
 }
 .font-SCdr,
 .font-SCdr *{
@@ -50,39 +50,43 @@ sub{vertical-align:sub; font-size:0.5em; }
 }
 .font-robo,
 .font-robo *{
-    font-family:'Roboto'; 
+    font-family:'Roboto', sans-serif;
 }
 .font-popp,
 .font-popp *{
-    font-family:'Poppins'; 
+    font-family:'Poppins', sans-serif;
 }
 .font-noSa,
 .font-noSa *{
-    font-family:"NotoSansKR"; 
+    font-family:"NotoSansKR", sans-serif;
 }
 .font-noSe,
 .font-noSe *{
-    font-family:'NotoSerifKR'; 
+    font-family:'NotoSerifKR', serif;
 }
 .font-nanu,
 .font-nanu *{
-    font-family:'NanumSquare'; 
+    font-family:'NanumSquare', sans-serif;
 }
 .font-Mont,
 .font-Mont * {
-    font-family:'Montserrat'; 
+    font-family:'Montserrat', sans-serif;
 }
 .font-Gmar,
 .font-Gmar *{
-    font-family:'GmarketSans'; 
+    font-family:'GmarketSans', sans-serif;
 }
 .font-free,
 .font-free *{
-	font-family:'Freesentation'; 
+	font-family:'Freesentation', sans-serif;
 }
 .font-Bcca,
 .font-Bcca *{
-    font-family:'BCcard'; 
+    font-family:'BCcard', sans-serif;
+}
+.font-paper,
+.font-paper *{
+    font-family: 'Paperlogy', sans-serif;
 }
 
 /* iOS 11.0 */

@@ -5,6 +5,7 @@
 
 @php
     $main_pop = strpos(request()->url(),'/main_popup');
+    $workshop_pop = strpos(request()->url(),'/workshop');
 @endphp
 @if($main_pop !== false)
     <script type="text/javascript" src="/assets/js/jquery-1.12.4.min.js"></script>
@@ -12,15 +13,20 @@
     <script src="{{ asset('plugins/plupload/2.3.6/plupload.full.min.js') }}"></script>
     <script src="{{ asset('plugins/plupload/2.3.6/jquery.plupload.queue/jquery.plupload.queue.min.js') }}"></script>
 @endif
+
 <!-- popup css -->
-<link rel="stylesheet" href="{{ asset('assets/css/base.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/common.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/layout.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/popup.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/sub.css') }}">
+@if($workshop_pop !== false)
+
+@else
+    <link rel="stylesheet" href="{{ asset('assets/css/base.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/common.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/sub.css') }}">
+@endif
 
 <div @if(empty($preview)) id="board-popup-{{ $board->sid }}" @endif class="popup-wrap" style="display: block; background-color: white; width: auto; height: auto;">
         <div class="popup-contents type4" style="width: auto; min-width:{{ $popup->width }}px; max-width:{{ $popup->width }}px; min-height:{{ $popup->height }}px; max-height:{{ $popup->height }}px; margin-top:{{ $popup->position_y }}px; margin-left:{{ $popup->position_x }}px;">

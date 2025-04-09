@@ -96,7 +96,11 @@
                         @endif
                     </td>
 
-                    <td>납부상태</td>
+                    <td>
+                        @if(!empty($row->payment_status))
+                            {{ $feeConfig['payment_status'][$row->payment_status ?? ''] ?? '' }}
+                        @endif
+                    </td>
                     <td>
                         @if(($row->payment_status ?? '') == 'Y')
                             <a href="{{ route('fee.transaction',['user_sid'=>$user->sid, 'tid'=>$row->tid ?? '']) }}" class="btn btn-small color-type8 call-popup" data-popup_name="transaction-pop" data-width="600" data-height="700">거래명세서</a>

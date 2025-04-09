@@ -83,6 +83,7 @@ const defaultVaildation = () => {
         return !(num < 0 || eng < 0);
     });
 
+
     // 캡챠 체크
     $.validator.addMethod('captchaChk', function (value, element) {
         return $(element).data('chk') === 'Y';
@@ -142,6 +143,8 @@ const callDateTimePicker = () => {
             altInput: true,
             altFormat: 'Y-m-d H:i:s',
             dateFormat : "Y-m-d H:i:s",
+            defaultHour: 0,     // 시간을 00시로 설정
+            defaultMinute: 0,   // 분을 00분으로 설정
         });
     });
 
@@ -876,9 +879,21 @@ $(document).on("keyup", "input[onlyEn]", function () {
     $(this).val(en);
 });
 
+// None English (공백허용)
+$(document).on("keyup", "input[noneEn]", function () {
+    const nonEn = $(this).val().replace(/[a-z]/gi, "");
+    $(this).val(nonEn);
+});
+
 // English & number (공백허용)
 $(document).on("keyup", "input[onlyEnNum]", function () {
     const en = $(this).val().replace(/[^a-z0-9\s+]/gi, "");
+    $(this).val(en);
+});
+
+// English(소문자) & number (공백허용)
+$(document).on("keyup", "input[onlySmallEnNum]", function () {
+    const en = $(this).val().replace(/[^a-z0-9\s+]/g, ""); // 대문자 제외
     $(this).val(en);
 });
 
@@ -893,3 +908,33 @@ $(document).on("keyup", "input[upperCase]", function () {
     const str = $(this).val();
     $(this).val(str.charAt(0).toUpperCase() + str.slice(1));
 });
+
+// 다음 우편번호 검색
+const callPostCode = (target = '') => {
+    new daum.Postcode({
+        oncomplete: function (data) {
+            $("#" + target + "zipcode").val(data.zonecode);
+            $("#" + target + "address").val(data.address);
+            $("#" + target + "address2").focus();
+
+            try {
+                $("#" + target + "zipcode").valid(); // 변수명을 target으로 변경
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    }).open();
+}
+
+//Email 형
+$(document).on("change",".emailOnly", function() {
+    if( !isCorrectEmail( $(this).val() ) ) {
+        alert('이메일 형식으로 입력해주세요.');
+        $(this).val('').focus();
+    }
+});
+
+function isCorrectEmail(email) {
+    if(!email) return false;
+    return /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i.test(email);
+}

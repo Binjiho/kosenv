@@ -50,7 +50,7 @@
                             <th scope="row">회원등급</th>
                             <td class="text-left">
                                 <select name="level" class="form-item">
-                                    <option value="">선택</option>
+                                    <option value="">전체</option>
 
                                     @foreach($userConfig['level'] as $key => $val)
                                         <option value="{{ $key }}" {{ (request()->level ?? '') == $key ? 'selected' : '' }}>{{ $val }}</option>

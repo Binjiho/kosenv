@@ -73,6 +73,17 @@ class MailRealSendServices extends AppServices
 //                $data = array_merge($data, $this->mailSendTartgetAppend($mailData));
                 break;
 
+            case 'registration-ok':
+            case 'registration-refund':
+            case 'abstract-ok':
+            case 'support-ok':
+            case 'support-bank':
+                $subject = $additionalData['subject'];
+
+                $data[] = $mailData;
+//                $data = array_merge($data, $this->mailSendTartgetAppend($mailData));
+                break;
+
             // 관리자 발송 메일
             case 'admin-type-send':
             case 'admin-target-resend':

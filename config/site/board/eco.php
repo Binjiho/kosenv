@@ -32,7 +32,7 @@ return [
         'login' => false, // 로그인 필요
         'writer' => true, //작성자
         'main' => true, // 메인노출
-        'notice' => false, // 공지
+        'notice' => true, // 공지
         'subject' => true, // 제목
         'link' => true, // 상세링크
         'hide' => true, // 공개옵션

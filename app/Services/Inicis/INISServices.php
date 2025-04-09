@@ -19,8 +19,13 @@ class INISServices extends AppServices
     {
         $SignatureUtil = new INIStdPayUtil();
 
-        $mid = env('INICIS_MID'); // 상점아이디
-        $signKey = env('INICIS_SIGNKEY'); // 웹 결제 signkey
+        if( masterIp() ) {
+            $mid = env('INICIS_TEST_MID'); // TEST아이디
+            $signKey = env('INICIS_TEST_SIGNKEY'); // TEST signkey
+        }else{
+            $mid = env('INICIS_MID'); // 상점아이디
+            $signKey = env('INICIS_SIGNKEY'); // 웹 결제 signkey
+        }
 
         $mKey = $SignatureUtil->makeHash($signKey, "sha256");
         $timestamp = $SignatureUtil->getTimestamp();
@@ -69,6 +74,12 @@ class INISServices extends AppServices
         $util = new INIStdPayUtil();
         $prop = new properties();
 
+        if( masterIp() ) {
+            $dev_signKey = env('INICIS_TEST_SIGNKEY'); // TEST signkey
+        }else{
+            $dev_signKey = env('INICIS_SIGNKEY'); // 웹 결제 signkey
+        }
+
         try {
             //#############################
             // 인증결과 파라미터 수신
@@ -80,7 +91,7 @@ class INISServices extends AppServices
                 // 1.전문 필드 값 설정(***가맹점 개발수정***)
                 //############################################
                 $mid = $request["mid"];
-                $signKey = env('INICIS_SIGNKEY'); // 웹 결제 signkey
+                $signKey = $dev_signKey; // 웹 결제 signkey
                 $timestamp = $util->getTimestamp();
                 $charset = "UTF-8";
                 $format = "JSON";

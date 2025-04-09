@@ -16,7 +16,7 @@ Route::controller(\App\Http\Controllers\Admin\Main\MainController::class)->group
 
 // member
 Route::controller(\App\Http\Controllers\Admin\Member\MemberController::class)->prefix('member')->group(function () {
-    Route::get('/', 'index')->name('member');
+    Route::get('/{case?}', 'index')->where('case', 'gubunN|gubunS|gubunG|withdraw|elimination')->name('member');
     Route::get('upsert/{sid}', 'upsert')->name('member.upsert');
     Route::get('popup/search', 'popupSearch')->name('member.popup.search');
     
@@ -34,6 +34,54 @@ Route::controller(\App\Http\Controllers\Admin\Fee\FeeController::class)->prefix(
     Route::get('receipt/{sid?}', 'receipt')->name('fee.receipt');
     Route::get('excel/{case?}', 'excel')->where('case', 'full|unpaid')->name('fee.excel');
     Route::post('data', 'data')->name('fee.data');
+});
+
+
+//Workshop
+Route::prefix('workshop')->group(function() {
+    Route::controller(\App\Http\Controllers\Admin\Workshop\WorkshopController::class)->group(function() {
+        Route::get('/', 'index')->name('workshop');
+        Route::get('upsert/{sid?}', 'upsert')->name('workshop.upsert');
+        Route::post('data', 'data')->name('workshop.data');
+    });
+
+    // 사전등록
+    Route::controller(\App\Http\Controllers\Admin\Workshop\RegistrationController::class)->prefix('registration/{work_code?}')->group(function() {
+        Route::get('/{case?}', 'index')->where('case', 'refund|elimination')->name('registration');
+        Route::get('/modify/{sid}', 'modify')->name('registration.modify');
+
+        Route::get('/preview/{sid}', 'preview')->name('registration.preview');
+        Route::get('/receipt/{sid}', 'receipt')->name('registration.receipt');
+        Route::get('/transaction/{sid}', 'transaction')->name('registration.transaction');
+        Route::get('/memo', 'memo')->name('registration.memo');
+        Route::get('/resend/{sid}', 'resend')->name('registration.resend');
+
+        Route::get('/excel', 'excel')->name('registration.excel');
+        Route::post('data', 'data')->name('registration.data');
+    });
+
+    // 초록
+    Route::controller(\App\Http\Controllers\Admin\Workshop\AbstractController::class)->prefix('abstract/{work_code?}')->group(function() {
+        Route::get('/{case?}', 'index')->where('case', 'elimination')->name('abstract');
+
+        Route::get('modify/{sid}', 'modify')->name('abstract.modify');
+        Route::get('/resend/{sid}', 'resend')->name('abstract.resend');
+
+        Route::get('/word/{sid?}', 'word')->name('abstract.word');
+        Route::get('word/preview', 'wordPreview')->name('abstract.word.preview');
+        Route::get('/excel', 'excel')->name('abstract.excel');
+        Route::post('data', 'data')->name('abstract.data');
+    });
+
+    // 후원신청
+    Route::controller(\App\Http\Controllers\Admin\Workshop\SupportController::class)->prefix('support/{work_code?}')->group(function() {
+        Route::get('/{case?}', 'index')->where('case', 'elimination')->name('support');
+        Route::get('modify/{sid}', 'modify')->name('support.modify');
+        Route::get('/resend/{sid}', 'resend')->name('support.resend');
+
+        Route::get('/excel', 'excel')->name('support.excel');
+        Route::post('data', 'data')->name('support.data');
+    });
 });
 
 // 메일

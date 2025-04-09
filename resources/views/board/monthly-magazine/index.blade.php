@@ -33,7 +33,7 @@
                 <ul class="vod-list">
                     @forelse($list as $row)
                     <li class="ef03" data-sid="{{ $row->sid ?? 0 }}">
-                        <a href="javascript:;">
+                        <a href="{{ !empty($row->link_url) ? $row->link_url : 'javascript:;' }}" {{ !empty($row->link_url) ? 'target="_blank"' : '' }} >
                             <div class="gall-img">
                                 <img src="{{ empty($row->thumbnail_realfile) ? '/html/bbs/vod/assets//image/no_image.png' : asset($row->thumbnail_realfile) }}" alt="">
                             </div>
@@ -117,7 +117,7 @@
                     sid: getPK(this),
                 }
 
-                if (confirm('정말로 삭제 하시겠습니까?')) {
+                if (confirm('삭제 하시겠습니까?')) {
                     callAjax(dataUrl, ajaxData);
                 }
             });

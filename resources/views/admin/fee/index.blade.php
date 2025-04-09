@@ -38,7 +38,7 @@
                             <th scope="row">회원등급</th>
                             <td class="text-left" colspan="3">
                                 <select name="level" class="form-item">
-                                    <option value="">선택</option>
+                                    <option value="">전체</option>
 
                                     @foreach($userConfig['level'] as $key => $val)
                                         <option value="{{ $key }}" {{ (request()->level ?? '') == $key ? 'selected' : '' }}>{{ $val }}</option>
@@ -68,7 +68,7 @@
                             <th scope="row">회비 연도</th>
                             <td class="text-left">
                                 <select name="year" class="form-item">
-                                    <option value="">선택</option>
+                                    <option value="">전체</option>
 
                                     @foreach($feeConfig['year'] as $key => $val)
                                         <option value="{{ $key }}" {{ (request()->year ?? '') == $key ? 'selected' : '' }}>{{ $val }}</option>
@@ -79,7 +79,7 @@
                             <th scope="row">회비 구분</th>
                             <td class="text-left">
                                 <select name="category" class="form-item">
-                                    <option value="">선택</option>
+                                    <option value="">전체</option>
 
                                     @foreach($feeConfig['category'] as $key => $val)
                                         <option value="{{ $key }}" {{ (request()->category ?? '') == $key ? 'selected' : '' }}>{{ $val }}</option>
@@ -92,7 +92,7 @@
                             <th scope="row">납부방법</th>
                             <td class="text-left">
                                 <select name="payment_method" class="form-item">
-                                    <option value="">선택</option>
+                                    <option value="">전체</option>
 
                                     @foreach($feeConfig['payment_method'] as $key => $val)
                                         <option value="{{ $key }}" {{ (request()->payment_method ?? '') == $key ? 'selected' : '' }}>{{ $val }}</option>
@@ -103,7 +103,7 @@
                             <th scope="row">납부상태</th>
                             <td class="text-left">
                                 <select name="payment_status" class="form-item">
-                                    <option value="">선택</option>
+                                    <option value="">전체</option>
 
                                     @foreach($feeConfig['payment_status'] as $key => $val)
                                         <option value="{{ $key }}" {{ (request()->payment_status ?? '') == $key ? 'selected' : '' }}>{{ $val }}</option>

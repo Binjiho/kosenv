@@ -64,6 +64,9 @@
     .cst-table thead th {
         padding: 5px;
     }
+    .cst-table td img.ico{
+        max-width: 14px;
+    }
         
     .cst .radio-group input[type="radio"],
     .cst .checkbox-group input[type="checkbox"] {

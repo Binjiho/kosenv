@@ -383,6 +383,7 @@
     display: inline-block;
     position: relative;
     vertical-align: top;
+    word-break: break-all;
 }
 .view-info > span + span{
     padding-left: 8px;
@@ -467,6 +468,7 @@
     margin: 50px auto;
     border: 1px solid #dfdfdf;
     border-radius: 3px;
+    text-align: center;
 }
 .gall-view-wrap .btn-img-down{
     position: absolute;
@@ -547,8 +549,8 @@
     max-width: 700px;
     margin: 0 auto;
 }
-.gall-view-rolling .slick-slide{
-    display: flex;
+.gall-view-rolling .gall-view-con{
+    display: flex !important;
     flex-wrap: wrap;
     gap: 15px;
 }
@@ -749,7 +751,7 @@
     border-left: 1px solid transparent;
 }
 .view-move.type1 .view-prev{
-   border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
 }
 .view-move.type1 .view-prev .tit{
     background-image: url('../image/ic_arrow_prev.png');
@@ -903,6 +905,12 @@
     }
 }
 @media screen and (max-width: 768px){
+    .ic-new {
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+    }
+
     /* Type C */
     .sch-wrap.type3 {
         margin-bottom: 40px;
@@ -963,6 +971,9 @@
     .gall-tit{
         height: auto;
         font-size: 14px;
+    }
+    .gall-tit-wrap:has(.ic-new) .gall-tit{
+        max-width: calc(100% - 24px);
     }
     .gall-con{
         margin-top: 5px;
@@ -1120,7 +1131,7 @@
     .gall-view-rolling{
         margin-top: 10px; 
     }
-    .gall-view-rolling .slick-slide{
+    .gall-view-rolling .gall-view-con{
         gap: 10px;
     }
     .gall-view-con > a{

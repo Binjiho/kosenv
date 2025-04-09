@@ -5,7 +5,7 @@
     
 ================================================== */
 .popup-wrap{
-    z-index: 10;
+    z-index: 20;
     overflow-x: hidden;
     overflow-y: auto;
     position: fixed;
@@ -193,10 +193,12 @@
     display: flex;
     justify-content: center;
 }
+.popup-wrap .popup-rolling-wrap .slick-slide {
+    margin: 0 10px;
+}
 .popup-wrap .popup-rolling-wrap .popup-contents{
     position: relative;
     display: block;
-    margin: 0 10px;
     background-color: #fff;
 }
 .popup-wrap .popup-rolling-wrap .popup-conbox{
@@ -248,7 +250,10 @@
 }
 .type3 .popup-contit-wrap,
 .type4 .popup-contit-wrap {
-    height: 70px;
+    min-height: 80px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .type3 .popup-contit,
 .type4 .popup-contit{
@@ -511,9 +516,6 @@
     .popup-wrap .popup-rolling-wrap .popup-conbox{
         margin-bottom: 36px;
     }
-    .popup-wrap .popup-rolling-wrap .popup-contents {
-        margin: 0 10px;
-    }
     .popup-rolling-wrap .slick-arrow{
         width: 35px;
         height: 35px;
@@ -531,17 +533,21 @@
     }
     .type3 .popup-contit-wrap,
     .type4 .popup-contit-wrap {
-        height: 45px;
+        min-height: 50px;
     }
     .type3 .popup-contit,
     .type4 .popup-contit{
-        font-size: 20px;
+        font-size: 18px;
     }
     
     /* Type C */
     .type3 .popup-tit-wrap{
+        padding: 15px;
         padding-right: 30px;
         padding-left: 30px;
+    }
+    .type3 .popup-tit-wrap img {
+        height: 30px;
     }
     .type3 .popup-con{
         padding: 15px;

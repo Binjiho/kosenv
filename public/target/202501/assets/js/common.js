@@ -11,6 +11,7 @@ $(function (e) {
         subMenu();
         tabMenu();
         slideTabMenu();
+        popRolling();
 
         mainVisual();
         sponsorRolling();
@@ -395,3 +396,23 @@ function sponsorRolling(){
     });
 }
 
+
+function popRolling(){
+    $('.js-popup-rolling').not('.slick-initialized').slick({
+        dots: false,
+        arrows: false,
+        autoplay: false,
+        infinite: false,
+        adaptiveHeight: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [{
+            breakpoint: 769,
+            settings: {
+                arrows: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
+    });
+}

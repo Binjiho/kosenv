@@ -16,7 +16,7 @@
                         <fieldset>
                             <legend class="hide">검색</legend>
                             <div class="form-group">
-                                <select name="" id="" class="form-item sch-cate">
+                                <select name="search" id="search" class="form-item sch-cate">
                                     @foreach($boardConfig['search'] as $key => $val)
                                         <option value="{{ $key }}" {{ ((request()->search ?? '') == $key) ? 'selected'  : '' }}>{{ $val }}</option>
                                     @endforeach
@@ -147,7 +147,7 @@
                     sid: getPK(this),
                 }
 
-                if (confirm('정말로 삭제 하시겠습니까?')) {
+                if (confirm('삭제 하시겠습니까?')) {
                     callAjax(dataUrl, ajaxData);
                 }
             });

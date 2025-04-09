@@ -236,6 +236,9 @@ body.ovh {
 .cst-table .checkbox-wrap {
     justify-content: center;
 }
+.cst-table td img.ico {
+    margin: 0 5px;
+}
 
 /* list type */
 .list-type > li{
@@ -528,6 +531,10 @@ body.ovh {
 .checkbox-group:has(input:disabled),
 .checkbox-group input[type="checkbox"]:disabled {
     cursor: default !important;
+}
+.radio-group input[type="radio"]:disabled,
+.checkbox-group input[type="checkbox"]:disabled {
+    background-color: #eee !important;
 }
 .radio-group,
 .checkbox-group {

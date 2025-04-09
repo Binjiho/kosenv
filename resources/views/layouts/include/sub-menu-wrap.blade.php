@@ -37,7 +37,7 @@
                     <ul>
                         @foreach($menu['sub'][$main_menu] ?? [] as $sKey => $sVal)
                             @if($sVal['continue']) @continue @endif
-                            <li class="{{ ($sub_menu ?? '') == $sKey ? 'on':'' }}"><a href="{{ empty($sVal['url']) ? route($sVal['route'], $sVal['param']) : $sVal['url'] }}" >{{ $sVal['name'] }}</a></li>
+                            <li class="{{ ($sub_menu ?? '') == $sKey ? 'on':'' }}"><a href="{{ empty($sVal['url']) ? route($sVal['route'], $sVal['param']) : $sVal['url'] }}" {{ $sVal['blank'] === true ? "target=_blank" : '' }} >{{ $sVal['name'] }}</a></li>
                         @endforeach
                     </ul>
                 </li>

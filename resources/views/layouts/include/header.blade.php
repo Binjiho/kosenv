@@ -15,7 +15,7 @@
                     <li><a href="{{ route('joinInfo') }}"><img src="/assets/image/common/ic_signup.png" alt="">SIGN UP</a></li>
                 @endif
                 @auth('admin')
-                <li><a href="{{ env('APP_URL') }}/admin"><img src="/assets/image/common/ic_admin.png" alt="">ADMIN</a></li>
+                <li class="admin"><a href="{{ env('APP_URL') }}/admin"><img src="/assets/image/common/ic_admin.png" alt="">ADMIN</a></li>
                 @endauth
             </ul>
 

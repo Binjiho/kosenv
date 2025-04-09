@@ -346,6 +346,17 @@ body.ovh {
     margin-left: -2rem;
 }
 
+.list-type-text > li{
+    display: flex;
+    padding: 0;
+}
+.list-type-text > li span{
+    width: 25px;
+}
+.list-type-text > li span + div{
+    width: 100%;
+}
+
 .notice {
     padding-left: 20px;
     background-repeat: no-repeat;

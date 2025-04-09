@@ -713,12 +713,28 @@
                     popupCheckEmpty: true,
                 },
                 width: {
-                    popupIsEmpty: true,
-                    popupSize: true,
+                    popupIsEmpty: {
+                        depends: function(element) {
+                            return $("input[name='popup']:checked").val()==='Y';
+                        },
+                    },
+                    popupSize: {
+                        depends: function(element) {
+                            return $("input[name='popup']:checked").val()==='Y';
+                        },
+                    },
                 },
                 height: {
-                    popupIsEmpty: true,
-                    popupSize: true,
+                    popupIsEmpty: {
+                        depends: function(element) {
+                            return $("input[name='popup']:checked").val()==='Y';
+                        },
+                    },
+                    popupSize: {
+                        depends: function(element) {
+                            return $("input[name='popup']:checked").val()==='Y';
+                        },
+                    },
                 },
                 position_x: {
                     popupIsEmpty: true,

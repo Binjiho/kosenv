@@ -72,10 +72,10 @@
     @if(isAdmin() || thisPK() == $board->user_sid)
         <script>
             $(document).on('click', '.btn-delete', function() {
-                if (confirm('정말로 삭제 하시겠습니까?')) {
+                if (confirm('삭제 하시겠습니까?')) {
                     callAjax(dataUrl, { case: 'board-delete', sid: {{ $board->sid }} });
                 }
             });
-        </script>
+        </script
     @endif
 @endsection

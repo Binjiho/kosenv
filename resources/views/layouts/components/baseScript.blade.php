@@ -14,6 +14,7 @@
 <script type="text/javascript" src="/assets/js/slick.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.rwdImageMaps.js"></script>
 <script type="text/javascript" src="/assets/js/common.js"></script>
+<script type="text/javascript" src="/target/202501/assets/js/common.js"></script>
 
 @if(Session::has('msg') && !empty(Session::get('msg')))
     <script>

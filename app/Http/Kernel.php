@@ -69,6 +69,7 @@ class Kernel extends HttpKernel
         /* add middleware */
         'auth.check' => Middleware\Site\AuthCheck::class,
         'board.check' => Middleware\Site\BoardCheck::class,
+        'workshop.check' => Middleware\Site\WorkshopCheck::class,
         'cryptoDecrypt' => Middleware\Site\CryptoDecrypt::class,
         'XSS.defense' => Middleware\Site\XSSDefense::class,
         'counter' => Middleware\Site\Counter::class,

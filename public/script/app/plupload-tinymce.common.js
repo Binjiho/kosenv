@@ -91,6 +91,65 @@ tinymce.init({
         };
 
         input.click();
+    },
+    setup: function(editor) {
+        editor.on('keyup', function(e) {
+            if ($('#max_words').length > 0) {
+                let tinymceVal = editor.getContent(); // 내용 가져오기
+                tinymceVal = tinymceVal.replace(/<[^>]*>?/g, ""); // html 태그 삭제
+                tinymceVal = tinymceVal.replace(/\&nbsp;/g, ' '); // &nbsp 삭제
+
+                const countLength = tinymceVal.split(' ').length;
+
+                const wordcount = tinymce.activeEditor.plugins.wordcount;
+                const charCount = wordcount.body.getCharacterCount();
+                const editorName = editor.getElement().getAttribute('name');
+                const lengthCheckEditor = [
+                    'contents',
+                ];
+
+                if (lengthCheckEditor.includes(editorName)) {
+                    let tinywordCnt = 0;
+                    const maxLength = 350;
+
+                    $('#' + editor.id).closest('div').find('.tinyword-cnt').val(countLength)
+
+                    $('.tinyword-cnt').each(function (k, v) {
+                        tinywordCnt += parseInt($(v).val());
+                    });
+
+                    // 어드민에서는 카운트 처리 X 박지호
+                    const _checkUrl = $('#max_words').data('url');
+                    if(_checkUrl != 'admin'){
+                        if (tinywordCnt > maxLength) {
+                            // editor.setContent('');
+
+                            alert( maxLength + '자까지만 등록 가능합니다');
+
+                            // 입력을 막기 위해 이전 상태로 되돌리기
+                            editor.undoManager.undo();
+
+                            let tinymceVal = editor.getContent(); // 내용 가져오기
+                            tinymceVal = tinymceVal.replace(/<[^>]*>?/g, ""); // html 태그 삭제
+                            tinymceVal = tinymceVal.replace(/\&nbsp;/g, ' '); // &nbsp 삭제
+
+                            const reCount = tinymceVal.split(' ').length;
+
+                            tinywordCnt = 0;
+                            $('#' + editor.id).closest('div').find('.tinyword-cnt').val(reCount)
+
+                            $('.tinyword-cnt').each(function (k, v) {
+                                tinywordCnt += parseInt($(v).val());
+                            });
+
+                        }
+
+                    }
+
+                    $('#max_words').val(tinywordCnt);
+                }
+            }
+        });
     }
 });
 

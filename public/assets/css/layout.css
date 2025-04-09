@@ -85,6 +85,9 @@
     line-height: 1;
     color: #fff;
 }
+.util-menu > li.admin > a{
+    color: #ffeb07;
+}
 
 /* gnb */
 #gnb {
@@ -200,7 +203,7 @@
 }
 
 /* 공통::스폰서 */
-.sponsor-wrap {
+/* .sponsor-wrap {
     padding: 20px 0;
     border-top: 1px solid #dcdcdc;
 }
@@ -245,7 +248,7 @@
 .sponsor-rolling .slick-next {
     right: 0;
     background-image: url('../image/common/sponsor_next.png');
-}
+} */
 
 /* 공통::푸터 */
 /* footer */
@@ -349,6 +352,10 @@
 }
 
 @media screen and (max-width: 1340px) { 
+    .util-menu{
+        padding: 5px 20px;
+        gap: 15px;
+    }
     /* 공통::푸터 */
     .footer-wrap .address-list {
         margin-left: 10%;
@@ -393,7 +400,7 @@
         background-repeat: no-repeat;
         background-position: center right;
         background-image: url('../image/common/ic_menu_open.png');
-        background-size: 45px auto;
+        background-size: 36px auto;
     }
 
     /* gnb */

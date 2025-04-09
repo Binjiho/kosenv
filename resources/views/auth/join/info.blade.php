@@ -71,9 +71,11 @@
                     <li>로그인 후, 회비납부내역에 접속하셔서, 우측 상단의 [회비 납부하기]를 통해 아래 세 가지 방법 중 택1하여 결제 부탁드립니다.</li>
                     <li>카드결제 / 가상계좌 / 간편결제</li>
                 </ul>
+                @if(empty(thisPK()))
                 <div class="btn-wrap text-center">
                     <a href="{{ route('join', ['gubun'=>'N', 'step'=>'1']) }}" class="btn btn-type1 color-type6">일반회원 가입하기</a>
                 </div>
+                @endif
             </div>
             <!-- //일반회원 -->
 
@@ -116,9 +118,12 @@
                     <li>로그인 후, 회비납부내역에 접속하셔서, 우측 상단의 [회비 납부하기]를 통해 아래 세 가지 방법 중 택1하여 결제 부탁드립니다.</li>
                     <li>카드결제 / 가상계좌 / 간편결제</li>
                 </ul>
+
+                @if(empty(thisPK()))
                 <div class="btn-wrap text-center">
                     <a href="{{ route('join', ['gubun'=>'S', 'step'=>'1']) }}" class="btn btn-type1 color-type6">특별회원 가입하기</a>
                 </div>
+                @endif
             </div>
             <!-- //특별회원 -->
 
@@ -156,9 +161,11 @@
                     <li>로그인 후, 회비납부내역에 접속하셔서, 우측 상단의 [회비 납부하기]를 통해 아래 세 가지 방법 중 택1하여 결제 부탁드립니다.</li>
                     <li>카드결제 / 가상계좌 / 간편결제</li>
                 </ul>
+                @if(empty(thisPK()))
                 <div class="btn-wrap text-center">
                     <a href="{{ route('join', ['gubun'=>'G', 'step'=>'1']) }}" class="btn btn-type1 color-type6">단체회원 가입하기</a>
                 </div>
+                @endif
             </div>
             <!-- //단체회원 -->
 

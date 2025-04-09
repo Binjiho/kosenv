@@ -31,6 +31,7 @@ Route::controller(\App\Http\Controllers\Board\BoardController::class)->middlewar
     Route::post('data', 'data')->name('board.data');
 });
 
+
 /*
 |--------------------------------------------------------------------------
 | Fallback Routes

@@ -32,7 +32,7 @@
                             <div class="btn"><span>바로가기</span><i class="arrow">아이콘</i></div>
                         </div>
                     </a></li>
-                <li><a href="javascript:alert('페이지 준비중입니다.');">
+                <li><a href="{{ route('mypage.work_attend') }}">
                         <p>학술대회 참석현황</p>
                         <div class="bottom">
                             <img src="/assets/image/sub/ic_mypage04.png" alt="">

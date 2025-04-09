@@ -21,6 +21,8 @@ class Board extends Model
     protected $dates = [
         'created_at',
         'updated_at',
+        'event_sDate',
+        'event_eDate',
     ];
 
     protected static function booted()
@@ -107,6 +109,7 @@ class Board extends Model
 
         if (empty($this->sid)) {
             $this->code = $data['code'];
+            $this->work_code = $data['work_code'] ?? null;
             $this->user_sid = thisPK() ?? 0;
         }
 

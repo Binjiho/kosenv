@@ -3,10 +3,12 @@
 namespace App\Services\Admin\Member;
 
 use App\Models\User;
+use App\Models\Fee;
 use App\Exports\MemberExcel;
 use App\Services\AppServices;
 use App\Services\CommonServices;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 /**
  * Class MemberServices
@@ -218,6 +220,7 @@ class MemberServices extends AppServices
 
     private function userUpdateServices(Request $request)
     {
+        $this->feeConfig = config('site.fee');
         $this->transaction();
 
         try {
@@ -225,7 +228,25 @@ class MemberServices extends AppServices
 
             $user->timestamps = false; // updated_at 자동 갱신 비활성화
 
-            $user->setByData($request);
+            /**
+             * 관리자페이지에서 생일 변경시 55세이상이면, 종신회비(미납일시) 업데이트
+             */
+            if($user->birth != $request->birth){
+                $isOlder = User::isAge55OrOlder($request->birth);
+                if($isOlder){
+                    $lifeFee = Fee::where(['user_sid'=>$user->sid, 'del'=>'N', 'gubun'=>'N', 'category'=>'C', 'payment_status'=>'N'])->first();
+                    if($lifeFee){
+                        $lifeFee->price = $this->feeConfig['price']['N']['D'];
+                        $lifeFee->update();
+                    }
+                }else{
+                    $lifeFee = Fee::where(['user_sid'=>$user->sid, 'del'=>'N', 'gubun'=>'N', 'category'=>'C', 'payment_status'=>'N'])->first();
+                    if($lifeFee){
+                        $lifeFee->price = $this->feeConfig['price']['N']['C'];
+                        $lifeFee->update();
+                    }
+                }
+            }
 
             /**
              * 관리자페이지에서 레벨 변경시 업데이트
@@ -235,6 +256,8 @@ class MemberServices extends AppServices
                 $user->gubun = $request->gubun;
                 $user->grade = $request->grade;
             }
+
+            $user->setByData($request);
 
             $user->update();
 

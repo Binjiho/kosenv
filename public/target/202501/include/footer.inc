@@ -19,6 +19,10 @@
                         <p><span>E-mail</span> kosenv@kosenv.or.kr</p>
                     </li>
                 </ul>
+                <button type="button" class="btn-top js-btn-top on">
+                    <span class="font-suit">▲</span>
+                    <p>TOP</p>
+                </button>
             </div>
             <div class="copy">
                 <p>Copyright ⓒ The Korean Society of Environmental Engineers. All rights Reserved</p>

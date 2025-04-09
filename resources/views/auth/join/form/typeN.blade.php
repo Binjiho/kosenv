@@ -50,7 +50,7 @@
         </div>
         <div class="form-con">
             <div class="form-group has-btn">
-                <input type="text" class="form-item" name="id" id="id" value="{{ $user->id ?? '' }}" data-chk="N" onlyEnNum>
+                <input type="text" class="form-item" name="id" id="id" value="{{ $user->id ?? '' }}" data-chk="N" maxlength="12" onlySmallEnNum>
                 <a href="javascript:;" id="uid_chk" class="btn btn-small color-type3">중복확인</a>
             </div>
             <p class="help-text text-blue mt-5">* 영문소문자, 숫자만 입력 가능. 최소 6~12자이상 입력하세요.</p>

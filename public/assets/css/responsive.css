@@ -4,11 +4,23 @@
     * responsive
     
 ================================================== */
-
 @media screen and (max-width: 1340px) {
     .inner-layer {
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    /* main visual */
+    .main-visual{
+        max-width: 100%;
+    }
+
+    /* sponsor */
+    .sponsor-rolling .slick-prev{
+        left: 15px;
+    }
+    .sponsor-rolling .slick-next{
+        right: 15px;
     }
 
     /* 서브::LNB */
@@ -26,6 +38,55 @@
     }
     .t-show {
         display: block;
+    }
+
+    /* main visual */
+    .main-visual{
+        height: 500px;
+    }
+    .main-visual-con{
+        background-size: cover;
+    }
+    .main-menu-list{
+        gap: 10px;
+    }
+    .main-menu-list > li{
+        height: 120px;
+    }
+    .main-menu-list .icon{
+        height: 40px;
+    }
+    .main-menu-list .icon img{
+        max-height: 40px;
+    }
+    .main-visual .slick-dots{
+        bottom: 80px;
+    }
+    
+    /* main contents */
+    .main-menu-list{
+        margin-top: -60px;
+    }
+    .main-quick-menu > li{
+        height: 200px;
+    }
+    .main-quick-menu > li > a{
+        gap: 10px;
+        padding: 0 20px;
+    }
+    .main-quick-menu > li > a img{
+        flex: 0 0 auto;
+        width: 80px;
+    }
+    .select-year-wrap{
+        width: 100%;
+        margin-left: 0;
+    }
+    .main-ev-wrap .main-tit-wrap{
+        width: 25%;
+    }
+    .main-ev-rolling{
+        width: 75%;
     }
 
     /* 서브::VISUAL */
@@ -58,6 +119,25 @@
     }
     .mypage-menu > li{
         width: calc(25% - 15px);
+    }
+
+    /* 학회소개::설립목적 */
+    .business-list{
+        gap: 15px;
+    }
+    .business-list > li{
+        width: calc((100% - 45px)/4);
+    }
+    .business-list .icon{
+        width: 30%;
+    }
+    .business-list .icon img{
+        max-width: 70%;
+    }
+
+    /* 학회소개::CI 소개 */
+    .ci-list{
+        gap: 40px;
     }
 }
 
@@ -339,6 +419,449 @@
     }
     .breadcrumb img {
         width: 16px;
+    }
+
+    /* main visual */
+    .main-visual{
+        height: 250px;
+        margin-top: 0;
+    }
+    .main-visual-con{
+        border-radius: 0;
+    }
+    .main-visual-con01{
+        background-image: url('../image/main/bg_mainvisual01_m.png');
+    }
+    .main-visual-con02{
+        background-image: url('../image/main/bg_mainvisual01_m.png');
+    }
+    .main-visual-tit{
+        font-size: 20px;
+    }
+    .main-visual-tit strong{
+        font-size: 30px;
+    }
+    .main-visual-text p{
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: 1.3;
+    }
+    .main-visual .slick-dots{
+        padding: 6px 15px;
+        bottom: 15px;
+    }
+    .main-visual .slick-dots > li{
+        margin: 0 3px;
+    }
+    .main-visual .slick-dots > li.slick-active button{
+        width: 8px;
+        height: 8px;
+    }
+    .main-menu-list{
+        flex-wrap: wrap;
+        margin: 15px 0;
+        gap: 10px;
+    }
+    .main-menu-list > li{
+        flex: inherit;
+        width: calc((100% - 20px)/3);
+        height: 100px;
+        border-radius: 10px;
+    }
+    .main-menu-list > li:hover{
+        transform: none;
+    }
+    .main-menu-list .tit{
+        font-size: 14px;
+    }
+    .main-menu-list .icon{
+        width: 35px;
+        height: 35px;
+    }
+    .main-menu-list .icon img{
+        max-width: 100%;
+        max-height: auto;
+    }
+    .main-contents:has(.main-board-conbox){
+        margin-top: 35px;
+        padding-top: 0;
+        border: 0;
+    }
+    .main-contents:has(.main-board-conbox) .inner-layer{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .main-board-conbox, 
+    .main-gall-conbox{
+        width: 100%;
+    }
+    .main-tit-wrap{
+        position: relative;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .main-tit{
+        font-size: 20px;
+    }
+    .main-tit-wrap .btn-more{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        margin: 0;
+        background-size: 18px;
+    }
+    .main-board-cate{
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0 0 auto;
+        gap: 5px;
+        width: 100%;
+        margin: 0;
+        margin-top: 15px;
+        text-align: center;
+    }
+    .main-board-cate > li{
+        width: calc((100% - 5px)/2);
+    }
+    .main-board-cate > li + li{
+        padding-left: 0;
+        margin-left: 0;
+    }
+    .main-board-cate > li + li:before{
+        display: none;
+    }
+    .main-board-cate > li:first-child{
+        width: 100%;
+    }
+    .main-board-cate > li > a{
+        display: block;
+        padding: 5px;
+        background-color: #f2fcf2;
+        border-radius: 8px 4px 8px 4px;
+        border: 1px solid #17941b;
+        font-size: 14px;
+        font-weight: 500;
+        color: #17941b;
+    }
+    .main-board-cate > li.on > a,
+    .main-board-cate > li:hover > a{
+        background-color: #17941b;
+        color: #fff;
+    }
+    .main-board-list > li + li{
+        margin-top: 7px;
+    }
+    .main-board-list > li > a{
+        gap: 10px;
+    }
+    .main-board-list .cate{
+        width: 65px;
+        height: 25px;
+        border-radius: 8px 4px 8px 4px;
+        font-size: 12px;
+    }
+    .main-board-list .subject{
+        max-width: calc(100% - 150px);
+        font-size: 14px;
+    }
+    .main-board-list > li:hover .subject{
+        box-shadow: inset 0 -6px #ebf9dd;
+    }
+    .main-board-list .date{
+        width: 65px;
+        font-size: 12px;
+        text-align: right;
+    }
+    .main-gall-conbox .btn-more{
+        display: block;
+    }
+    .main-gall-conbox .img-wrap{
+        height: 200px;
+        border-width: 2px;
+        border-radius: 15px 3px 15px 3px;
+    }
+    .main-gall-conbox .img-wrap > a:hover:before{
+        display: none;
+    }
+    .main-contents:has(.main-ev-rolling){
+        position: relative;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .select-year-wrap{
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 10px;
+    }
+    .select-year-wrap{
+        position: static;
+        top: 0;
+        width: 100%;
+        margin-top: 40px;
+    }
+    .select-year{
+        width: 135px;
+        height: 38px;
+        font-size: 15px;
+        border-radius: 8px 3px 8px 3px;
+    }
+    .select-year select{
+        padding: 0 15px;
+        background-position: right 15px center;
+        background-size: 10px;
+    }
+    .select-year select option{
+        font-size: 15px;
+    }
+    .select-year-wrap .month-wrap{
+        position: relative;
+        width: 110px;
+    }
+    .month-wrap .btn-month{
+        display: block;
+        width: 100%;
+        height: 38px;
+        padding: 0 15px;
+        background-color: #61d4e6;
+        border-radius: 8px 3px 8px 3px;
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-image: url('../image/main/ic_select_arrow.png');
+        background-size: 10px;
+        color: #fff;
+        text-align: left;;
+    }
+    .month-wrap .month{
+        overflow-y: auto;
+        display: none;
+        position: absolute;
+        top: 38px;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        max-height: 200px;
+        border-radius: 0;
+    }
+    .select-year-wrap .month > li{
+        flex: inherit;
+    }
+    .select-year-wrap .month > li > a{
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+    .main-ev-wrap .main-tit-wrap{
+        position: absolute;
+        top: 25px;
+        left: 0;
+        width: 100%;
+        padding: 0 15px;
+    }
+    .main-ev-wrap .main-tit{
+        margin: 0;
+    }
+    .main-ev-wrap .main-tit-wrap p{
+        display: none;
+    }
+    .main-ev-wrap .main-tit-wrap .btn-more{
+        right: 15px;
+    }
+    .main-ev-wrap{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .main-ev-rolling{
+        width: 100%;
+    }
+    .main-ev-rolling .slick-list{
+        margin: 0 35px;
+    }
+    .main-ev-rolling .slick-arrow{
+        width: 26px;
+        height: 26px;
+        background-size: 100%;
+    }
+    .main-ev-con{
+        width: calc((100% - 20px)/2);
+        margin: 0 5px;
+        padding: 5px;
+    }
+    .main-ev-con > a{
+        width: 100%;
+        height: 100%;
+        min-height: 190px;
+        padding: 15px 20px;
+        margin: 0;
+        border-radius: 15px 5px 5px 5px;
+        border: 0;
+        box-shadow: 1.5px 1.5px 8px 1.5px rgba(0, 0, 0, 0.08);
+    }
+    .main-ev-con > a:before{
+        display: none;
+    }
+    .main-ev-con .month{
+        display: none;
+    }
+    .main-ev-con .tit{
+        padding-left: 25px;
+        padding-right: 0;
+        background-size: 15px;
+        background-position: 0 7px;
+        font-size: 18px;
+    }
+    .main-ev-con > a:hover .tit span{
+        box-shadow: inset 0 -8px #ebf9dd;
+    }
+    .main-ev-con .place{
+        padding-left: 15px;
+        background-size: 9px;
+        margin-top: 20px;
+    }
+    .main-ev-con .date{
+        margin-top: auto;
+        font-size: 12px;
+    }
+
+    .main-quick-menu{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .main-quick-menu > li{
+        width: 100%;
+        border-radius: 5px 5px 20px 5px;
+    }
+    .main-quick-menu > li > a{
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 10px;
+        font-size: 15px;
+    }
+    .main-quick-menu > li > a br{
+        display: none;
+    }
+    .main-quick-menu > li > a img{
+        width: 33px;
+    }
+    .main-quick-menu > li:nth-child(2) > a:before{
+        padding: 3px;
+        border-radius: 5px 5px 20px 5px;
+    }
+    .main-quick-menu > li:before{
+        display: none;
+    }
+    .main-contents:has(.related-list){
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    .related-list{
+        flex-wrap: wrap;
+        gap: 10px;
+        border: 0;
+        border-radius: 0;
+    }
+    .related-list > li{
+        width: calc((100% - 10px)/2);
+    }
+    .related-list li + li:before{
+        display: none;
+    }
+    .related-list li > a{
+        display: block;
+        height: 85px;
+        padding: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 15px;
+        background-position: right 10px bottom 15px;
+        background-size: auto 30px;
+    }
+    .related-list .logo{
+        max-height: 30px;
+    }
+    .related-list .logo img{
+        max-width: 100%;
+        max-height: 30px;
+    }
+    .related-list .logo:after{
+        width: 12px;
+        height: 12px;
+        top: -1px;
+        right: -5px;
+    }
+    .related-list li:nth-child(4) .logo:after, 
+    .related-list li:nth-child(5) .logo:after{
+        top: 3px;
+    }
+    .related-list li:hover{
+        background: transparent;
+    }
+    .related-list li:nth-child(1) > a{
+        background-image: url('../image/main/bg_related01.png');
+    }
+    .related-list li:nth-child(2) > a{
+        background-image: url('../image/main/bg_related02.png');
+    }
+    .related-list li:nth-child(3) > a{
+        background-image: url('../image/main/bg_related03.png');
+    }
+    .related-list li:nth-child(4) > a{
+        background-image: url('../image/main/bg_related04.png');
+    }
+    .related-list li:nth-child(5) > a{
+        background-image: url('../image/main/bg_related04.png');
+    }
+    .related-list li:hover > a .logo:after{
+        width: 12px;
+        height: 12px;
+        top: -1px;
+        right: -5px;
+    }
+    .related-list li:nth-child(4):hover .logo:after, 
+    .related-list li:nth-child(5):hover .logo:after{
+        top: 3px;
+    }
+    .related-list li:nth-child(1):hover .logo img{
+        content: url('../image/main/img_related_logo01.png');
+    }
+    .related-list li:nth-child(2):hover .logo img{
+        content: url('../image/main/img_related_logo02.png');
+    }
+    .related-list li:nth-child(3):hover .logo img{
+        content: url('../image/main/img_related_logo03.png');
+    }
+    .related-list li:nth-child(4):hover .logo img{
+        content: url('../image/main/img_related_logo04.png');
+    }
+    .related-list li:nth-child(5):hover .logo img{
+        content: url('../image/main/img_related_logo05.png');
+    }
+
+    /* sponsor */
+    .sponsor-wrap{
+        padding: 15px 0;
+    }
+    .sponsor-rolling a{
+        border-radius: 3px;
+    }
+    .sponsor-rolling .slick-list{
+        margin: 0 30px;
+    }
+    .sponsor-rolling .slick-arrow{
+        width: 25px;
+        height: 25px;
+        background-size: 100%;
+    }
+
+    .sponsor-rolling .slick-slide{
+        margin: 0;
+    }
+    .sponsor-rolling .slick-slide > div{
+        margin: 0 5px;
     }
 
     /* 서브::LNB */
@@ -776,5 +1299,419 @@
     }
     .find-form .form-con:before{
         display: none;
+    }
+
+    /* 학회소개::학회장 인사말 */
+    .greeting-wrap{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .greeting-wrap .img-wrap{
+        flex: inherit;
+        width: 100%;
+        max-width: 225px;
+        margin: 0 auto;
+    }
+    .greeting-wrap .img-wrap .img{
+        border-radius: 5px 5px 20px 5px;
+    }
+    .greeting-wrap .img-tit{
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    .greeting-wrap .text-wrap{
+        width: 100%;
+        font-size: 14px;
+    }
+    .greeting-wrap .text-wrap > .tit{
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    .greeting-wrap .text-wrap p + p{
+        margin-top: 20px;
+    }
+    .greeting-tit-wrap{
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+    .greeting-tit{
+        padding-left: 20px;
+        font-size: 16px;
+        background-position: 0 4px;
+        background-size: 13px;
+    }
+    .journal-conbox .greeting-wrap,
+    .journal-conbox .table-wrap{
+        margin-top: 50px;
+    }
+
+    /* 학회소개::설립목적 */
+    .goal-conbox{
+        border-radius: 5px 5px 20px 5px;
+        background-image: url('../image/sub/bg_goal_conbox_m.png');
+    }
+    .goal-conbox p{
+        padding: 90px 15px;
+        font-size: 16px;
+        line-height: 1.3;
+    }
+    .goal-conbox p br{
+        display: none;
+    }
+    .business-list{
+        gap: 10px;
+    }
+    .business-list > li{
+        flex-direction: column;
+        width: calc((100% - 10px)/2);
+        padding: 15px 10px;
+        border-radius: 5px 5px 20px 5px;
+    }
+    .business-list .icon{
+        width: 100%;
+    }
+    .business-list .icon img{
+        max-width: none;
+        height: 55px;
+    }
+    .business-list .text-wrap{
+        margin-top: 15px;
+        padding: 0;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .m-br{
+        display: block;
+    }
+
+    /* 학회소개::CI 소개 */
+    .ci-list{
+        flex-direction: column;
+        gap: 35px;
+        margin-top: 55px;
+    }
+    .ci-tit{
+        top: -15px;
+        padding: 7px 10px;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+    .ci-list > li{
+        padding-bottom: 30px;
+        border-width: 2px;
+        border-radius: 10px;
+    }
+    .ci-list .text-wrap{
+        font-size: 14px;
+    }
+    .ci-list .text-wrap > strong{
+        font-size: 16px;
+    }
+    .ci-list .text-wrap p{
+        margin-top: 10px;
+    }
+    .logo-list{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .logo-list > li{
+        width: 100%;
+        border-radius: 10px 10px 30px 10px;
+    }
+    .logo-list > li > a{
+        padding: 15px;
+    }
+    .logo-list .img{
+        height: auto;
+    }
+    .logo-list .img img{
+        max-width: 100%;
+        max-height: 75px;
+    }
+    .logo-list .tit{
+        margin-top: 15px;
+        font-size: 14px;
+    }
+    .logo-list .tit img{
+        width: 20px;
+    }
+
+    /* 학회소개::연혁 */
+    .year-rolling-wrap{
+        width: calc(100% + 30px);
+        margin-top: 40px;
+        margin-left: -15px;
+        margin-right: -15px;
+        margin-bottom: 30px;
+    }
+    .year-rolling-wrap:before, 
+    .year-rolling-wrap:after{
+        display: none;
+    }
+    .year-rolling{
+        padding: 10px 40px;
+    }
+    .year-rolling a{
+        font-size: 16px;
+    }
+    .year-rolling .current,
+    .year-rolling .current a{
+        background: none;
+        color: #0096ae;
+        text-decoration: underline;
+    }
+    .btn-year-arrow{
+        width: 26px;
+        height: 26px;
+        background-size: 100%;
+    }
+    .btn-year-prev{
+        left: 15px;
+    }
+    .btn-year-next{
+        right: 15px;
+    }
+    .history-conbox{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .history-conbox + .history-conbox{
+        margin-top: 25px;
+    }
+    .history-conbox .year{
+        position: relative;
+        width: 100%;
+        font-size: 18px;
+    }
+    .history-con > li{
+        gap: 10px;
+        font-size: 14px;
+    }
+    .history-con > li + li{
+        margin-top: 10px;
+    }
+    .history-con .date{
+        position: relative;
+        padding-left: 10px;
+        font-size: 14px;
+    }
+    .history-con .date:before{
+        display: block;
+        content: '';
+        clear: both;
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 3px;
+        height: 3px;
+        background-color: #0096ae;
+        border-radius: 50%;
+    }
+
+    .conf .history-con > li{
+        gap: 3px;
+        flex-direction: column;
+    }
+    .conf .history-con .date{
+        width: 100%;
+    }
+    .conf .history-con .con{
+        padding-left: 10px;
+    }
+
+    /* 학회소개::정관 */
+    .term-con-wrap{
+        margin-top: 50px;
+    }
+    .term-tit{
+        padding: 7px 15px;
+        border-radius: 5px 5px 0 0;
+        font-size: 16px;
+    }
+    .term-conbox{
+        padding: 15px;
+        font-size: 14px;
+    }
+    .term-conbox .list-type > li + li{
+        margin-top: 3px;
+    }
+    .term-conbox .list-type-square > li + li{
+        margin-top: 20px;
+    }
+    .term-conbox .list-type-square > li .list-type{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .term-conbox + .term-tit,
+    .term-conbox ul + p{
+        margin-top: 30px;
+    }
+
+    /* 학회소개::사무국 안내 */
+    .map-icon{
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    .map-icon > li{
+        width: 33.33%;
+        max-width: 100%;
+    }
+    .map-wrap{
+        height: 200px;
+    }
+    .map-wrap .wrap_map{
+        height: 200px !important;
+    }
+    .sub-contit-wrap{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .sub-contit{
+        padding-left: 20px;
+        background-size: 13px;
+        background-position: 0 3px;
+        font-size: 15px;
+    }
+    .map-info-list{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .map-info-list > li{
+        flex: inherit;
+        justify-content: start;
+        gap: 12px;
+        width: 100%;
+        min-height: initial;
+        padding: 10px 15px;
+        border-radius: 5px 5px 20px 5px;
+        text-align: left;
+    }
+    .map-info-list > li img{
+        width: 15px;
+    }
+    .map-info-list > li span{
+        display: block;
+        margin: 0;
+    }
+    .contact-conbox .sub-tab-wrap{
+        margin-top: 40px;
+    }
+    .type2 .sub-tab-menu{
+        gap: 10px;
+    }
+    .type2 .sub-tab-menu > li{
+        max-width: 115px;
+        height: 35px;
+        border-radius: 3px;
+    }
+    .type2 .sub-tab-menu > li > a{
+        font-size: 14px;
+    }
+    .contact-info{
+        margin-top: 20px;
+    }
+    .contact-info > li{
+        gap: 20px;
+    }
+    .contact-info > li + li{
+        margin-top: 20px;
+    }
+    .contact-info > li img{
+        width: 25px;
+    }
+    .contact-info .tit{
+        margin-top: 20px;
+    }
+    .contact-conbox .box-list{
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 40px;
+    }
+    .contact-conbox .box-list .tit{
+        top: -18px;
+        padding: 6px 10px;
+        min-width: 100px;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .contact-conbox .box-list > li{
+        padding: 0 15px 20px;
+        border-width: 2px;
+        border-radius: 10px;
+    }
+    .contact-conbox .box-list .text-wrap strong{
+        font-size: 18px;
+    }
+    .contact-conbox .box-list .text-wrap ul{
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    /* 학회지 및 간행물::국문지 */
+    .journal-conbox .sub-tab-menu{
+        flex-wrap: wrap;
+    }
+    .journal-conbox .sub-tab-menu > li{
+        flex: inherit;
+        width: calc((100% - 10px)/2);
+    }
+    .journal-conbox .bg-box{
+        width: calc(100% + 30px);
+        margin: 0 -15px;
+        padding: 40px 15px 20px;
+        font-size: 14px;
+    }
+    .journal-conbox .bg-box .tit{
+        font-size: 23px;
+    }
+    .journal-info{
+        margin-top: 20px;
+    }
+    .journal-info > li{
+        gap: 10px;
+        font-size: 15px;
+    }
+    .journal-info > li + li{
+        margin-top: 10px;
+    }
+    .journal-info .tit{
+        width: 40%;
+        padding: 7px 10px;
+        font-size: 15px;
+    }
+    .journal-info .tit:before{
+        padding: 3px;
+    }
+    .journal-banner{
+        width: calc(100% + 30px);
+        padding: 35px 15px;
+        margin: 0 -15px;
+        margin-top: 40px;
+        border-radius: 0;
+    }
+    .journal-banner p{
+        font-size: 16px;
+    }
+    
+
+    /* 회원관련::개인정보 취급방침 */
+    .term-con-wrap.type2{
+        margin-top: 20px;
+    }
+    .term-con-wrap.type2 .term-tit{
+        width: calc(100% + 30px);
+        margin-left: -15px;
+        border-radius: 0;
+    }
+    .term-con-wrap.type2 .term-tit{
+        font-size: 16px;
+    }
+    .term-con-wrap.type2 .term-conbox{
+        padding: 15px 0 30px;
+    }
+    .term-con-wrap.type2 .term-conbox .list-type{
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 }  

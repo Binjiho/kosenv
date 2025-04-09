@@ -9,6 +9,7 @@
     <meta name="Keywords" content="대한환경공학회">
     <meta name="description" content="대한환경공학회">
     <title>대한환경공학회</title>
+    <link rel="icon" href="/assets/image/favicon.ico">
     <link type="text/css" rel="stylesheet" href="/assets/css/slick.css">
     <link type="text/css" rel="stylesheet" href="/assets/css/common.css">
     <link type="text/css" rel="stylesheet" href="/assets/css/jquery-ui.min.css">

@@ -47,12 +47,20 @@ class MypageController extends Controller
         view()->share(['sub_menu' => 'S3']);
         return view('mypage.repassword', $this->mypageServices->indexService($request));
     }
+
+    public function work_attend(Request $request)
+    {
+        view()->share(['sub_menu' => 'S5']);
+        return view('mypage.workshop.attend_list');
+    }
+
     //회원탈퇴
     public function withdraw(Request $request)
     {
         view()->share(['sub_menu' => 'S6']);
         return view('mypage.withdraw', $this->mypageServices->indexService($request));
     }
+
 
     public function MyPagedata(Request $request)
     {
