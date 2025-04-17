@@ -34,7 +34,9 @@ class MainServices extends AppServices
                     ->where('popup_eDate', '>=', now()->format('Y-m-d'));
 
             })
+            ->limit(3)
             ->get();
+
 
         // 학술대회 일정
         $query = Board::where(['code' => 'event-schedule', 'hide' => 'N'])->orderBy('event_sDate');

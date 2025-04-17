@@ -59,6 +59,8 @@
                         <img src="/assets/image/sub/ic_map_tel.png" alt="">
                         <p>
                             <span>사무국 <a href="tel:02-383-9652" target="_blank">02-383-9652</a> <a href="mailto:kosenv@kosenv.or.kr" target="_blank">kosenv@kosenv.or.kr</a></span>
+							<span>사무국(홍보) <a href="tel:02-383-9697" target="_blank">02-383-9697</a> <a href="mailto:social@kosenv.or.kr" target="_blank">social@kosenv.or.kr</a></span><br>
+
                             <span>편집국(국문지) <a href="tel:02-383-9653" target="_blank">02-383-9653</a> <a href="mailto:ksee@kosenv.or.kr" target="_blank">ksee@kosenv.or.kr</a></span>
                             <span>편집국(영문지) <a href="mailto:eer@kosenv.or.kr" target="_blank">eer@kosenv.or.kr</a></span>
                         </p>

@@ -136,20 +136,29 @@ function popup(){
 function popRolling(){
     $('.js-popup-rolling').not('.slick-initialized').slick({
         dots: false,
-        arrows: false,
+        arrows: true,
         autoplay: false,
         infinite: false,
         adaptiveHeight: true,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
-        responsive: [{
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    arrows: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },{
             breakpoint: 769,
             settings: {
                 arrows: true,
                 slidesToShow: 1,
                 slidesToScroll: 1
             }
-        }]
+        }
+        ]
     });
 }
 

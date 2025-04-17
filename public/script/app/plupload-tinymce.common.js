@@ -46,6 +46,7 @@ const tinymce_image_upload_handler = (blobInfo, progress) => new Promise((resolv
 tinymce.init({
     promotion: false,
     selector: '.tinymce', // 에디터 사용 클래스
+    image_dimensions: false, //이미지 자동 축소
     language: 'ko_KR',
     plugins: [
         'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',

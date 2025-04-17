@@ -30,6 +30,7 @@
 
 <div @if(empty($preview)) id="board-popup-{{ $board->sid }}" @endif class="popup-wrap" style="display: block; background-color: white; width: auto; height: auto;">
         <div class="popup-contents type4" style="width: auto; min-width:{{ $popup->width }}px; max-width:{{ $popup->width }}px; min-height:{{ $popup->height }}px; max-height:{{ $popup->height }}px; margin-top:{{ $popup->position_y }}px; margin-left:{{ $popup->position_x }}px;">
+            <div class="popup-rolling-wrap">
             <div class="popup-conbox">
 
                 <div class="popup-contit-wrap">
@@ -64,6 +65,7 @@
                     @endif
                 </div>
 
+            </div>
             </div>
         </div>
 

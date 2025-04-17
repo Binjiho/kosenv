@@ -20,6 +20,7 @@
 
 
 <div @if(empty($preview)) id="board-popup-{{ $board->sid }}" @endif class="popup-wrap" style="display: block; background-color: white; width: auto; height: auto;">
+    <div class="popup-rolling-wrap">
     <div class="popup-contents type3" style="width: auto; min-width:{{ $popup->width }}px; max-width:{{ $popup->width }}px; min-height:{{ $popup->height }}px; max-height:{{ $popup->height }}px; margin-top:{{ $popup->position_y }}px; margin-left:{{ $popup->position_x }}px;">
         <div class="popup-tit-wrap">
             <img src="/assets/image/popup/popup_logo.png" alt="">
@@ -55,6 +56,7 @@
             </div>
 
         </div>
+    </div>
     </div>
 
     <div class="popup-footer btn-pop-today-close" style="cursor: pointer;">

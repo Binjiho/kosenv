@@ -321,7 +321,7 @@
     </script>
 
 
-{{--    @if(!empty($boardPopupList))--}}
-{{--        @include('popup.board.rolling-popup', ['boardPopupList' => $boardPopupList])--}}
-{{--    @endif--}}
+    @if(!empty($boardPopupList))
+        @include('common.board.popup.multi_pop', ['boardPopupList' => $boardPopupList])
+    @endif
 @endsection

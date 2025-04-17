@@ -73,10 +73,7 @@
                 <div class="form-tit"><strong class="required">*</strong> 등록 구분</div>
                 <div class="form-con">{{ $workshopConfig['category'][$reg->category]['name'] ?? '' }} - {{ number_format($workshopConfig['category'][$reg->category]['price']) ?? '' }}원</div>
             </li>
-            <li>
-                <div class="form-tit"><strong class="required">*</strong> 셔틀버스 수요조사</div>
-                <div class="form-con">{{ $workshopConfig['shuttle_yn'][$reg->shuttle_yn] ?? '' }}</div>
-            </li>
+
             <li>
                 <div class="form-tit">등록비</div>
                 <div class="form-con"><strong class="text-red">{{ number_format($workshopConfig['category'][$reg->category]['price']) ?? '' }}원</strong></div>

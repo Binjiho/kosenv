@@ -160,7 +160,11 @@
                     </th>
                     <td style="padding:10px; border:1px solid #e2e2e2; border-right:0; text-align:left; font-family:'맑은 고딕',Arial,sans-serif; line-height:1.4; font-size:15px;">
                         {{ $workshopConfig['grade'][$sup->grade]['name'] ?? '' }} -
-                        {{ number_format($workshopConfig['grade'][$sup->grade]['price']) ?? '' }}원 (VAT없음)
+                        @if( ($sup->grade ?? '') == 'S' )
+                            후원 기업 지정 금액
+                        @else
+                            {{ number_format($workshopConfig['grade'][$sup->grade]['price']) ?? '' }}원 (VAT없음)
+                        @endif
                     </td>
                 </tr>
                 <tr>

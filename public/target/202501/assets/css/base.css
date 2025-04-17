@@ -540,6 +540,11 @@ body.ovh {
 .checkbox-group {
     position: relative;
     cursor: pointer;
+    padding-left: 26px;
+}
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"]{
+    margin-left: -26px;
 }
 .radio-wrap.n2 label,
 .checkbox-wrap.n2 label {

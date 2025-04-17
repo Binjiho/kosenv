@@ -84,9 +84,17 @@
                             </li>
                             <li>
                                 <div class="form-tit">구분</div>
-                                <div class="form-con">{{ $workshopConfig['grade'][$sup->grade]['name'] ?? '' }} -
-                                    {{ number_format($workshopConfig['grade'][$sup->grade]['price']) ?? '' }}원 (VAT없음)</div>
+                                <div class="form-con">
+                                    {{ $workshopConfig['grade'][$sup->grade]['name'] ?? '' }} -
+                                    @if( ($sup->grade ?? '') == 'S' )
+                                        후원 기업 지정 금액
+                                    @else
+                                        {{ number_format($workshopConfig['grade'][$sup->grade]['price']) ?? '' }}원 (VAT없음)
+                                    @endif
+                                </div>
                             </li>
+
+                            @if( ($sup->grade ?? '') != 'S' )
                             <li>
                                 <div class="form-tit">금액</div>
                                 <div class="form-con">
@@ -103,15 +111,16 @@
                                     <p class="text-blue">{{ $workshopConfig['spayment_status'][$sup->spayment_status] ?? '' }}</p>
                                 </div>
                             </li>
-                            @if(($sup->spay_method ?? '') == 'Bank')
-                            <li>
-                                <div class="form-tit">입금 회사명</div>
-                                <div class="form-con">{{ $sup->depositor ?? '' }}</div>
-                            </li>
-                            <li>
-                                <div class="form-tit">입금 예정일</div>
-                                <div class="form-con">{{ !empty($sup->deposit_date) ? $sup->deposit_date->format('Y.m.d') : '' }}</div>
-                            </li>
+                                @if(($sup->spay_method ?? '') == 'Bank')
+                                <li>
+                                    <div class="form-tit">입금 회사명</div>
+                                    <div class="form-con">{{ $sup->depositor ?? '' }}</div>
+                                </li>
+                                <li>
+                                    <div class="form-tit">입금 예정일</div>
+                                    <div class="form-con">{{ !empty($sup->deposit_date) ? $sup->deposit_date->format('Y.m.d') : '' }}</div>
+                                </li>
+                                @endif
                             @endif
                             <li>
                                 <div class="form-tit">최초 등록일</div>

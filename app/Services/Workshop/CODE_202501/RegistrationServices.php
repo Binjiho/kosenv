@@ -299,7 +299,7 @@ class RegistrationServices extends AppServices
         if(!empty($request->reg_sid)){
             //수정 페이지일 경우
             $already_reg = Registration::where(['sid'=>$request->reg_sid])->first();
-            $registration = Registration::where(['del'=>'N', 'refund_yn'=>'N', 'email'=>$email])->whereNot('email', $already_reg->email)->first();
+            $registration = Registration::where(['del'=>'N', 'refund_yn'=>'N', 'email'=>$email])->whereNotIn('sid', [$request->reg_sid])->first();
         }else{
             $registration = Registration::where(['del'=>'N', 'refund_yn'=>'N', 'email'=>$email])->first();
         }
@@ -331,7 +331,7 @@ class RegistrationServices extends AppServices
         if(!empty($request->reg_sid)){
             //수정 페이지일 경우
             $already_reg = Registration::where(['sid'=>$request->reg_sid])->first();
-            $registration = Registration::where(['del'=>'N', 'refund_yn'=>'N', 'phone'=>$phone])->whereNot('phone', $already_reg->phone)->first();
+            $registration = Registration::where(['del'=>'N', 'refund_yn'=>'N', 'phone'=>$phone])->whereNotIn('sid', [$request->reg_sid])->first();
         }else{
             $registration = Registration::where(['del'=>'N', 'refund_yn'=>'N', 'phone'=>$phone])->first();
         }

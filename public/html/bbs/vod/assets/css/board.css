@@ -14,6 +14,11 @@
     08. write
     
 ====================================== */
+
+.editor-contents p {
+    text-align: center;
+}
+
 /* list */
 /* Type C */
 .sch-wrap.type3 {

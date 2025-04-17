@@ -67,7 +67,15 @@
     .cst-table td img.ico{
         max-width: 14px;
     }
-        
+            
+    .radio-group,
+    .checkbox-group {
+        padding-left: 21px;
+    }
+    .radio-group input[type="radio"],
+    .checkbox-group input[type="checkbox"]{
+        margin-left: -21px;
+    }
     .cst .radio-group input[type="radio"],
     .cst .checkbox-group input[type="checkbox"] {
         margin-right: 5px;

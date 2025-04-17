@@ -14,6 +14,11 @@
     08. write
 
 ====================================== */
+
+.editor-contents p {
+    text-align: center;
+}
+
 /* Type B */
 .sch-wrap.type2{
     margin-bottom: 40px;

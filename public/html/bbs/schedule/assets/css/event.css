@@ -4,6 +4,10 @@
 	
 ====================================== */
 
+.editor-contents p {
+    text-align: center;
+}
+
 /* common */
 .ic-new{
     display: inline-flex;
@@ -298,6 +302,9 @@
     width: 100%;
     padding-right: 25px;
     word-break: break-all;
+}
+.type2 .ev-con .ellipsis2 {
+    -webkit-line-clamp : 1;
 }
 .type2 .ev-con .tit{
     font-size: 2rem;

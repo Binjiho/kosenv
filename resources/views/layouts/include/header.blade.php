@@ -48,6 +48,7 @@
                         <a href="{{ empty($val['url']) ? route($val['route'], $val['param']) : $val['url'] }}" ><span>{!! $val['name'] !!}</span></a>
 
                         @foreach($menu['sub'][$key] ?? [] as $sKey => $sVal)
+                            @if($sVal['continue']) @continue @endif
                             @if($loop->first)
                                 <ul>
                                     @endif

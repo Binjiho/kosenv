@@ -178,7 +178,8 @@ class SupportServices extends AppServices
                 }
                 // END 메일 발송
 
-            }else if($request->spay_method == 'Bank'){
+            }else {
+//            }else if($request->spay_method == 'Bank'){
                 $sup->depositor = $request->depositor;
                 $sup->deposit_date = $request->deposit_date;
 

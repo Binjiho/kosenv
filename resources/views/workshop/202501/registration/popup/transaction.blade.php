@@ -65,7 +65,7 @@
                                 <td>(사)대한환경공학회</td>
                                 <th>성명</th>
                                 <td class="sign">
-                                    <div>김석태 <img src="/assets/image/popup/img_sign.png" alt=""></div>
+                                    <div>강석태 <img src="/assets/image/popup/img_sign.png" alt=""></div>
                                 </td>
                             </tr>
                             <tr>

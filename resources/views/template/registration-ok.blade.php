@@ -158,14 +158,7 @@
                         {{ $workshopConfig['category'][$reg->category]['name'] ?? '' }} - {{ number_format($workshopConfig['category'][$reg->category]['price']) ?? '' }}원
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row" style="padding:10px; background-color:#f4f4f4; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; font-weight:400; font-family:'맑은 고딕',Arial,sans-serif; line-height:1.4; font-size:15px;">
-                        셔틀버스 수요조사
-                    </th>
-                    <td style="padding:10px; border:1px solid #e2e2e2; border-right:0; text-align:left; font-family:'맑은 고딕',Arial,sans-serif; line-height:1.4; font-size:15px;">
-                        {{ $workshopConfig['shuttle_yn'][$reg->shuttle_yn] ?? '' }}
-                    </td>
-                </tr>
+
                 <tr>
                     <th scope="row" style="padding:10px; background-color:#f4f4f4; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; font-weight:400; font-family:'맑은 고딕',Arial,sans-serif; line-height:1.4; font-size:15px;">
                         결제 방법

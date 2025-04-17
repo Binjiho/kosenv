@@ -99,11 +99,7 @@ class RegistrationServices extends AppServices
             ->map(function ($group) {
                 return $group->count();
             });
-        // 셔틀버스 수요조사 카운트
-        $this->data['shuttle_ynCnt'] = $query->get('shuttle_yn')->groupBy('shuttle_yn')
-            ->map(function ($group) {
-                return $group->count();
-            });
+
         // 결제방법 카운트
         $this->data['payment_methodCnt'] = $query->get('payment_method')->groupBy('payment_method')
             ->map(function ($group) {

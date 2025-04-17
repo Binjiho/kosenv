@@ -90,17 +90,6 @@
                                 </select>
                             </td>
 
-                            <th scope="row">셔틀버스 수요조사</th>
-                            <td class="text-left">
-                                <select name="shuttle_yn" class="form-item">
-                                    <option value="">전체</option>
-
-                                    @foreach($workshopConfig['shuttle_yn'] as $key => $val)
-                                        <option value="{{ $key }}" {{ (request()->shuttle_yn ?? '') == $key ? 'selected' : '' }}>{{ $val }}</option>
-                                    @endforeach
-                                </select>
-                            </td>
-
                             <th scope="row">결제 방법</th>
                             <td class="text-left">
                                 <select name="payment_method" class="form-item">
@@ -111,9 +100,7 @@
                                     @endforeach
                                 </select>
                             </td>
-                        </tr>
 
-                        <tr>
                             <th scope="row">결제 상태</th>
                             <td class="text-left">
                                 <select name="payment_status" class="form-item">
@@ -123,13 +110,7 @@
                                     @endforeach
                                 </select>
                             </td>
-
-                            <th scope="row"></th>
-                            <td class="text-left"></td>
-                            <th scope="row"></th>
-                            <td class="text-left"></td>
                         </tr>
-
 
                         </tbody>
                     </table>
@@ -181,15 +162,7 @@
                             @endforeach
                         </td>
                     </tr>
-                    <tr>
-                        <td>셔틀버스 수요조사</td>
-                        <td style="text-align: left; ">
-                            전체 : {{ $total_cnt ? number_format($total_cnt) : 0 }}명 |
-                            @foreach($workshopConfig['shuttle_yn'] as $key => $val)
-                                {{ $val }} : {{ $shuttle_ynCnt[$key] ?? 0 }}명 |
-                            @endforeach
-                        </td>
-                    </tr>
+
                     <tr>
                         <td>결제 방법</td>
                         <td style="text-align: left; ">

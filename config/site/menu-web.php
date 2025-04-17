@@ -185,7 +185,7 @@ return [
                 'route' => 'login',
                 'param' => [],
                 'url' => null,
-                'continue' => false,
+                'continue' => true,
                 'blank'=>false,
             ],
             'S3' => [
@@ -220,14 +220,7 @@ return [
 //                'continue' => false,
 //        'blank'=>false,
 //            ],
-            'S7' => [
-                'name' => '구인·구직',
-                'route' => 'board',
-                'param' => ['code'=>'offer'],
-                'url' => null,
-                'continue' => false,
-                'blank'=>false,
-            ],
+
             'S8' => [
                 'name' => '개인정보 취급 방침',
                 'route' => 'member.privacy',
@@ -324,6 +317,14 @@ return [
                 'name' => '회원동정',
                 'route' => 'board',
                 'param' => ['code'=>'mems'],
+                'url' => null,
+                'continue' => false,
+                'blank'=>false,
+            ],
+            'S8' => [
+                'name' => '구인·구직',
+                'route' => 'board',
+                'param' => ['code'=>'offer'],
                 'url' => null,
                 'continue' => false,
                 'blank'=>false,

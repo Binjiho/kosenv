@@ -89,7 +89,7 @@
                     <h3 class="sub-tit">회원의 종류</h3>
                 </div>
                 <ul class="list-type list-type-dot green">
-                    <li>중소기업 / 국가기관, 공기업(중견기업, 국가기관, 정부투자기관, 공기업) / 대기업</li>
+                    <li>중소기업 / 중견기업, 국가기관, 공기업 <!--  국가기관, 공기업(중견기업, 국가기관 정부투자기관,  공기업)--> / 대기업</li>
                 </ul>
 
                 <div class="sub-tit-wrap">

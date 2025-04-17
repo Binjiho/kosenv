@@ -23,13 +23,13 @@
                 </div>
             </div>
 
-            @if($isAbsDue == true)
+            <!-- @if($isAbsDue == true)
             <div class="btn-wrap text-center">
                 <a href="{{ route('abstract.check',['work_code'=>$work_code]) }}" class="btn btn-type1 color-type1">
                     <img src="/target/202501/assets/image/sub/ic_pen.png" alt="" class="left">초록접수 바로가기
                 </a>
             </div>
-            @endif
+            @endif -->
 
             <div class="sub-tit-wrap">
                 <h4 class="sub-tit">접수 안내 사항</h4>
@@ -38,6 +38,37 @@
                 <li>사전등록 > 최종 입금 완료하신 분들만 제출 가능합니다.</li>
                 <li>초록은 발표자가 직접 등록해야 합니다.</li>
                 <li>YEP 발표형식에 포스터(국문, 영문)로 접수가 가능합니다.</li>
+                <li>주제별 분야는 다음의 6 개 주제 중 선택하셔야 하며, 발표 신청 시 Abstract 만 등록합니다.
+                    <div class="table-wrap">
+                        <table class="cst-table">
+                            <caption class="hide">주제별 분야</caption>
+                            <colgroup>
+                                <col style="width: 50%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th colspan="2">주제 구분</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>대기환경</td>
+                                    <td>생태 및 위해성</td>
+                                </tr>
+                                <tr>
+                                    <td>물환경/상하수도</td>
+                                    <td>자원순환</td>
+                                </tr>
+                                <tr>
+                                    <td>토양 지하수</td>
+                                    <td>환경정책 및 교육</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+            </ul>
             </ul>
             <div class="sub-tit-wrap">
                 <h4 class="sub-tit">포스터 발표 안내</h4>
@@ -87,7 +118,7 @@
                 </table>
             </div>
 
-            @if($isAbsDue == true)
+          @if($isAbsDue == true)
             <div class="btn-wrap text-center">
                 <a href="{{ route('abstract.check',['work_code'=>$work_code]) }}" class="btn btn-type1 color-type1">
                     <img src="/target/202501/assets/image/sub/ic_pen.png" alt="" class="left">초록접수 바로가기

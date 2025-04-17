@@ -107,10 +107,18 @@
                             <li>
                                 <div class="form-tit"><strong class="required">*</strong> 구분</div>
                                 <div class="form-con">
-                                    <p class="text-red">{{ $workshopConfig['grade'][$sup->grade]['name'] ?? '' }} -
-                                        {{ number_format($workshopConfig['grade'][$sup->grade]['price']) ?? '' }}원 (VAT없음)</p>
+                                    <p class="text-red">
+                                        {{ $workshopConfig['grade'][$sup->grade]['name'] ?? '' }} -
+                                        @if( ($sup->grade ?? '') == 'S')
+                                            후원 기업 지정 금액
+                                        @else
+                                            {{ number_format($workshopConfig['grade'][$sup->grade]['price']) ?? '' }}원 (VAT없음)
+                                        @endif
+                                    </p>
                                 </div>
                             </li>
+
+                            @if( ($sup->grade ?? '') != 'S' )
                             <li>
                                 <div class="form-tit">금액</div>
                                 <div class="form-con">
@@ -144,6 +152,7 @@
                                 <div class="form-tit"><strong class="required">*</strong> 입금 계좌 정보</div>
                                 <div class="form-con">우리은행 1005-201-691718 / 예금주 : 대한환경공학회</div>
                             </li>
+                            @endif
                         </ul>
                     </div>
 

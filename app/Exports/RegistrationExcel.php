@@ -45,7 +45,7 @@ class RegistrationExcel implements FromCollection, WithHeadings, ShouldAutoSize,
 
             '이메일',
             '휴대폰 번호',
-            '셔틀버스 수요조사',
+//            '셔틀버스 수요조사',
             '등록비',
             '결제상태',
 
@@ -80,7 +80,7 @@ class RegistrationExcel implements FromCollection, WithHeadings, ShouldAutoSize,
 
             $data->email,
             $data->phone,
-            $workshopConfig['shuttle_yn'][$data->shuttle_yn] ?? '',
+//            $workshopConfig['shuttle_yn'][$data->shuttle_yn] ?? '',
             !empty($data->price) ? number_format($data->price ?? 0) : '',
             $workshopConfig['payment_status'][$data->payment_status] ?? '',
 

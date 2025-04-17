@@ -52,13 +52,13 @@
                     <p>명찰 (프로그램북, 식권 등) 수령</p>
                 </li>
             </ul>
-            @if($isRegistDue == true)
+            <!-- @if($isRegistDue == true)
             <div class="btn-wrap text-center">
                 <a href="{{ route('registration',['work_code'=>$work_code]) }}" class="btn btn-type1 color-type1">
                     <img src="/target/202501/assets/image/sub/ic_pen.png" alt="" class="left">사전등록 바로가기
                 </a>
             </div>
-            @endif
+            @endif -->
             <div class="sub-tit-wrap">
                 <h4 class="sub-tit">등록비</h4>
             </div>

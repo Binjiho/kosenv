@@ -167,6 +167,14 @@
                                     if ($reg->user_chk === 'N' && in_array($key, ['A', 'B', 'C'])) {
                                         $disable_chk = 'disabled';
                                     }
+
+                                    if($reg->gubun !== 'G' && in_array($key, ['F','G'])){
+                                        $disable_chk = 'disabled';
+                                    }
+                                }else{
+                                    if(in_array($key, ['F','G'])){
+                                        $disable_chk = 'disabled';
+                                    }
                                 }
                             @endphp
                             <label class="radio-group" for="category_{{ $key }}">
@@ -176,19 +184,7 @@
                     </div>
                 </div>
             </li>
-            <li>
-                <div class="form-tit"><strong class="required">*</strong> 셔틀버스 수요조사</div>
-                <div class="form-con">
-                    <p>전문가그룹 학술대회에 셔틀버스 서비스가 제공된다면 이용할 계획이 있다.</p>
-                    <div class="radio-wrap cst mt-10">
-                        @foreach( $workshopConfig['shuttle_yn'] as $key => $val )
-                            <label class="radio-group" for="shuttle_yn_{{ $key }}">
-                                <input type="radio" name="shuttle_yn" id="shuttle_yn_{{ $key }}" value="{{ $key }}" data-name="{{ $val }}" {{ ( $reg->shuttle_yn ?? '' ) == $key ? 'checked' : ''  }}>{{ $val }}
-                            </label>
-                        @endforeach
-                    </div>
-                </div>
-            </li>
+
         </ul>
     </div>
     <p class="help-text mt-10 text-red">※ 학생은 석박사통합이 아닌 석사생만 해당됩니다. 잘못 등록하신 경우 재등록 및 결제가 되실 수 있는 점 안내 드립니다.</p>
@@ -199,7 +195,6 @@
         <p class="des">
             <span>참가 구분 : <b id="gubun_text">{{ !empty($reg->sid) ? $workshopConfig['gubun'][$reg->gubun] : '' }}</b></span>
             <span>등록 구분 : <b id="category_text">{{ !empty($reg->sid) ? $workshopConfig['category'][$reg->category]['name'] : '' }} {{ !empty($reg->sid) ? '-'.number_format($workshopConfig['category'][$reg->category]['price']).'원' : '' }}</b></span>
-            <span>셔틀버스 수요조사 : <b id="shuttle_text">{{ !empty($reg->sid) ? $workshopConfig['shuttle_yn'][$reg->shuttle_yn] : '' }}</b></span>
         </p>
     </div>
 
@@ -236,6 +231,15 @@
         $(document).on('click',"input[name='gubun']",function(){
             const _name = $(this).data('name');
             $("#gubun_text").html(_name);
+
+            $('#category_F').prop('disabled',true);
+            $('#category_G').prop('disabled',true);
+            $('#category_F').prop('checked',false);
+            $('#category_G').prop('checked',false);
+            if($(this).val() == 'G'){
+                $('#category_F').prop('disabled',false);
+                $('#category_G').prop('disabled',false);
+            }
         });
 
         $(document).on('click',"input[name='category']",function(){
@@ -246,10 +250,6 @@
             $("#price").val(_price);
         });
 
-        $(document).on('click',"input[name='shuttle_yn']",function(){
-            const _name = $(this).data('name');
-            $("#shuttle_text").html(_name);
-        });
 
         $.validator.addMethod("phoneCheck", function(value, element) {
             // 모든 phone[] 필드 값 가져오기
@@ -333,9 +333,7 @@
                 category: {
                     checkEmpty: true,
                 },
-                shuttle_yn: {
-                    checkEmpty: true,
-                },
+
                 captcha_input: {
                     isEmpty: true,
                     captchaChk: true,
@@ -387,9 +385,6 @@
                 },
                 category: {
                     checkEmpty: "등록 구분을 입력해주세요.",
-                },
-                shuttle_yn: {
-                    checkEmpty: "셔틀버스 수요조사를 입력해주세요.",
                 },
 
                 captcha_input: {

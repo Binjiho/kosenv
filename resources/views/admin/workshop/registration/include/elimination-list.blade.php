@@ -11,7 +11,7 @@
 
             <col style="width: 8%;">
             <col style="width: 10%;">
-            <col style="width: 8%;">
+{{--            <col style="width: 8%;">--}}
             <col style="width: 7%;">
             <col style="width: 6%;">
 
@@ -36,7 +36,7 @@
 
             <th scope="col">이메일</th>
             <th scope="col">휴대폰번호</th>
-            <th scope="col">셔틀버스<br>수요조사</th>
+{{--            <th scope="col">셔틀버스<br>수요조사</th>--}}
             <th scope="col">등록비</th>
             <th scope="col">결제상태</th>
 
@@ -82,6 +82,7 @@
 
                 <td>{{ $row->email ?? '' }}</td>
                 <td>{{ $row->phone ?? '' }}</td>
+{{--
                 <td>
                     <select class="form-item db-change" data-field="shuttle_yn">
                         <option value="">선택</option>
@@ -90,6 +91,7 @@
                         @endforeach
                     </select>
                 </td>
+--}}
                 <td>{{ number_format($row->price ?? 0) ?? 0 }}</td>
                 <td>
                     <select class="form-item db-change" data-field="payment_status">

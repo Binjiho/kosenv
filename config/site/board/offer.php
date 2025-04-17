@@ -4,8 +4,8 @@ $code = 'offer';
 
 return [
     'menu' => [ // 메뉴 키
-        'main' => 'M4',
-        'sub' => 'S7'
+        'main' => 'M6',
+        'sub' => 'S8'
     ],
 
     'code' => "{$code}", // 게시판 코드

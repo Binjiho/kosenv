@@ -91,7 +91,8 @@ class Board extends Model
 
             // 첨부파일 (plupload) 삭제
             if (!empty($plupload_file_del)) {
-                foreach ($board->files()->whereIn('bsid', $plupload_file_del)->get() as $plFile) {
+//                $plupload_file_del = array_map('intval', $plupload_file_del);
+                foreach ($board->files()->whereIn('sid', $plupload_file_del)->get() as $plFile) {
                     $plFile->delete();
                 }
             }

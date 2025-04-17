@@ -25,7 +25,7 @@
                 </dl>
                 <dl>
                     <dt>장소</dt>
-                    <dd>KAIST</dd>
+                    <dd>KAIST 창의학습관 (E11)</dd>
                 </dl>
             </div>
         </div>

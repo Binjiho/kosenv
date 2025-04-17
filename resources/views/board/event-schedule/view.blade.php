@@ -26,7 +26,7 @@
                                 @endif
                             </ul>
                             @if(!empty($board->link_url))
-                                <p class="text-right">
+                                <p class="text-center">
                                     Homepage : <a href="{{ $board->link_url }}" target="_blank">{{ $board->link_url }}</a>
                                 </p>
                             @endif

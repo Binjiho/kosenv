@@ -314,7 +314,7 @@
                                                 </div>
                                             </div>
                                         </li>
-
+{{--
                                         <li class="popupBox" style="display: {{ $popupDisplay }}">
                                             <div class="form-tit">팝업 사이즈</div>
 
@@ -335,6 +335,7 @@
 
                                             </div>
                                         </li>
+--}}
 
                                         <li class="popupBox" style="display: {{ $popupDisplay }}">
                                             <div class="form-tit">팝업 자세히 보기</div>

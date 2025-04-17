@@ -139,10 +139,16 @@
                 <div class="radio-wrap cst">
                     @foreach( $workshopConfig['grade'] as $key => $val )
                         <label class="radio-group w-100p" for="grade{{ $key }}">
-                            <input type="radio" name="grade" id="grade{{ $key }}" value="{{ $key }}" {{ ( $sup->grade ?? '' ) == $key ? 'checked' : ''  }} data-price="{{ $val['price'] }}">{{ $val['name'] }} - {{ number_format($val['price']) }}원 (VAT없음)
+                            <input type="radio" name="grade" id="grade{{ $key }}" value="{{ $key }}" {{ ( $sup->grade ?? '' ) == $key ? 'checked' : ''  }} data-price="{{ $val['price'] }}">
+                            @if($val['support'])
+                                {{ $val['name'] }} - 후원 기업 지정 금액
+                            @else
+                                {{ $val['name'] }} - {{ number_format($val['price']) }}원 (VAT없음)
+                            @endif
                         </label>
                     @endforeach
                 </div>
+                <p class="help-text mt-10">※  후원 기업 지정 금액으로 선택하신 단체는 사무국으로 꼭 연락주시기 바랍니다</p>
             </div>
         </li>
     </ul>
